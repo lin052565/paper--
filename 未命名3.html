@@ -129,8 +129,10 @@
 <div class="bottom-sheet" id="bottomSheet">
     <div class="handle"></div>
     <div class="button-stack">
-        <button class="btn-item btn-consume" onclick="stepCount(-1)">消耗 1 張</button>
-        <button class="btn-item btn-gray" onclick="stepCount(1)">增加 1 張</button>
+        <button class="btn-item btn-consume" onclick="stepCount(-1)">黑白單面</button>
+        <button class="btn-item btn-consume" onclick="stepCount(-2)">黑白雙面</button>
+        <button class="btn-item btn-consume" onclick="stepCount(-2)">彩色單面</button>
+        <button class="btn-item btn-consume" onclick="stepCount(-3)">彩色雙面</button>
         <button class="btn-item btn-gray" onclick="manualInput()">手動輸入張數</button>
     </div>
     <button style="margin-top:25px; background:none; border:none; color:#86868b; cursor:pointer; width:100%; font-size:1rem;" onclick="closeSheet()">收起面板</button>
@@ -168,7 +170,7 @@
     }
 
     function manualInput() {
-        const val = prompt("✅ 驗證成功\n請輸入新的剩餘張數：", count);
+        const val = prompt("\n請輸入新的剩餘張數：", count);
         const parsed = parseInt(val);
         if (!isNaN(parsed) && parsed >= 0) {
             count = parsed;
